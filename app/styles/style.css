@@ -1,0 +1,74 @@
+@import url(https://fonts.googleapis.com/css?family=Didact+Gothic|Comfortaa:400,700&subset=latin,cyrillic);
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Comfortaa', Arial;
+}
+body{
+    display: flex;  
+    flex-direction: column;
+    height: 100vh;
+}
+
+.navbar_position{
+    display: inherit;
+    width: 100%;
+    height: 50px; 
+    background: rgb(255, 255, 255);
+    align-items: center;
+}
+.navbar{
+    background-image: linear-gradient(to top right, rgb(101, 115, 255), rgb(111, 114, 247), rgb(120, 114, 239), rgb(130, 113, 231), rgb(139, 112, 223), rgb(149, 111, 215), rgb(158, 111, 208), rgb(168, 110, 200), rgb(177, 109, 192), rgb(187, 108, 184), rgb(196, 108, 176), rgb(206, 107, 168));
+    color: white;
+}
+.navbar__button_play{
+    cursor:pointer;
+    margin-left: 5px;
+}
+
+.field{
+    display: inherit;
+    width: 500px;
+    height: 500px;
+    flex-wrap: wrap;
+    align-content: center;
+    margin: auto;
+}
+.cell{
+    border: 1px solid black;
+    width: 140px;
+    height: 140px;
+}
+.cell:nth-child(1),.cell:nth-child(2),.cell:nth-child(3){
+    border-top: none;
+}
+.cell:nth-child(1),.cell:nth-child(4),.cell:nth-child(7){
+    border-left: none;
+}
+.cell:nth-child(7),.cell:nth-child(8),.cell:nth-child(9){
+    border-bottom: none;
+}
+.cell:nth-child(3),.cell:nth-child(6),.cell:nth-child(9){
+    border-right: none;
+}
+/* .cell_x::before, .cell_x::after{
+    content:'';
+    border-left: 2px solid black;
+}
+.cell_o{
+
+} */
+
+
+footer{
+    background:  #531253d0;
+    box-shadow: 0 -200px 100px -120px rgba(43, 159, 226, 0.418) inset;
+    animation: background 20s infinite alternate;
+    color:white;
+}
+@keyframes background {
+    50% {
+      background: skyblue;
+      box-shadow: 0 -200px 100px -100px rgba(156, 50, 205, 0.781) inset;
+    }
+  }
