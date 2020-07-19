@@ -1,4 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Didact+Gothic|Comfortaa:400,700&subset=latin,cyrillic);
+:root{
+    --cell-size: 140px;
+}
 *{
     margin:0;
     padding:0;
@@ -35,9 +38,13 @@ body{
     margin: auto;
 }
 .cell{
+    position: relative;
     border: 1px solid black;
-    width: 140px;
-    height: 140px;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .cell:nth-child(1),.cell:nth-child(2),.cell:nth-child(3){
     border-top: none;
@@ -51,13 +58,37 @@ body{
 .cell:nth-child(3),.cell:nth-child(6),.cell:nth-child(9){
     border-right: none;
 }
-/* .cell_x::before, .cell_x::after{
+.cell_x::before, .cell_x::after{
     content:'';
-    border-left: 2px solid black;
+    position: absolute;
+    border-left: 10px solid black;
+    width: calc(var(--cell-size)*.01);
+    height: var(--cell-size);
+    transform: rotate(45deg);
 }
-.cell_o{
-
-} */
+.cell_x::before{
+    transform: rotate(-45deg);
+}
+.cell_o::before, .cell_o::after{
+    content:'';
+    position: absolute;
+    border-radius: 50%;
+}
+.cell_o::before{
+    width: calc(var(--cell-size)*.8);
+    height: calc(var(--cell-size)*.8);
+    background-color: black;
+}
+.cell_o::after{
+    width: calc(var(--cell-size)*.65);
+    height: calc(var(--cell-size)*.65);
+    background-color: white;
+}
+span{
+    margin-left: auto;
+    margin-right: 50%;
+    font-weight: bolder;
+}
 
 
 footer{
@@ -66,6 +97,7 @@ footer{
     animation: background 20s infinite alternate;
     color:white;
 }
+
 @keyframes background {
     50% {
       background: skyblue;
