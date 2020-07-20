@@ -117,7 +117,7 @@ function mark(cell, turnCurrent) {
 function swap() {
     turn = !turn;
 }
-//Кнопка рестарта игры и обнуление данных
+//Кнопка рестарта игры и обнуления данных
 function restartButton() {
     button.style.display = "inherit";
 }
@@ -129,7 +129,7 @@ function restartGame() {
     })
     start();
 }
-//Проверят выиграл ли данный игрок
+//Проверяет выиграл ли данный игрок
 function checkWinner(currentClass) {
     return comboWin.some(combination => {
         return combination.every(index => {
@@ -137,7 +137,7 @@ function checkWinner(currentClass) {
         })
     })
 }
-//Проверят вышли ли игроки в ничью
+//Проверяет вышли ли игроки в ничью
 function isDraw() {
     return [...fieldCell].every(cell => {
         return cell.classList.contains(cellX) || cell.classList.contains(cellO)
